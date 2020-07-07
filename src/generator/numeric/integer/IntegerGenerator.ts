@@ -18,10 +18,16 @@ export class IntegerGenerator extends NumericGenerator<IntegerIndividual> {
    * Generates a gene with the specified
    * params.
    * @param params of the generator.
+   * @param index
    * @return the generated gene.
    */
-  public generateGene(params: NumericParams): number {
-    return Generator.generateInteger(params.range, params.engine);
+  public generateGene(params: NumericParams, index: number): number {
+    const particularValue = params.particularValue(index);
+    if (particularValue === undefined) {
+      return Generator.generateInteger(params.range, params.engine);
+    } else {
+      return particularValue;
+    }
   }
 
   /**

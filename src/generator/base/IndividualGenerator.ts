@@ -37,8 +37,9 @@ export interface IndividualGenerator<I extends BaseIndividual<T>, Params extends
    * Generates a gene of the individual given
    * the params of the generator.
    * @param params of the generator.
+   * @param index
    */
-  generateGene(params: Params): T;
+  generateGene(params: Params, index: number): T;
 
   /**
    * Method for giving a more *readable*

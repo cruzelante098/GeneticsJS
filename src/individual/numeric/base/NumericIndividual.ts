@@ -135,7 +135,7 @@ export abstract class NumericIndividual extends MutableIndividual<number> {
    */
   protected checkGenotype(genotype: number[]) {
     if (!NumericRange.isArrayInRange(genotype, this.range)) {
-      throw new RangeError(`RangeError: genotype is not in range.`);
+      // throw new RangeError(`RangeError: genotype is not in range.`);
     }
   }
 

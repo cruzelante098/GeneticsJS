@@ -18,6 +18,7 @@ export interface NumericParams extends GeneratorParams {
    * are going to be generated.
    */
   range: NumericRange;
+  particularValue: (index: number) => number | undefined;
 }
 
 /**
@@ -37,7 +38,7 @@ export abstract class NumericGenerator<I extends NumericIndividual> extends Base
    */
   public generate(length: number, range: NumericRange = NumericRange.DEFAULT, engine = Generator.DEFAULT_ENGINE): I {
     const params = { length, range, engine };
-    return this.generateWith(params);
+    return this.generateWith(params as NumericParams);
   }
 
   /**

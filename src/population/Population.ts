@@ -7,6 +7,7 @@
 import { FitnessFunction } from '../fitness/FitnessFunction';
 import { GeneratorParams } from '../generator/base/GeneratorParams';
 import { IndividualGenerator } from '../generator/base/IndividualGenerator';
+import { NumericParams } from '../generator/numeric/base';
 import { BaseIndividual } from '../individual/base/BaseIndividual';
 
 export interface PopulationItem<I extends BaseIndividual<T>, T> {
